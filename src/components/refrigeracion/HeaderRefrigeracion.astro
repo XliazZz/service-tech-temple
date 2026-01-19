@@ -1,11 +1,17 @@
 ---
+
 ---
 
-<header class="sticky top-0 z-50 w-full border-b border-slate-100 bg-white/95 backdrop-blur-sm">
-  <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-    
+<header
+  class="sticky top-0 z-50 w-full border-b border-slate-100 bg-white/95 backdrop-blur-sm"
+>
+  <div
+    class="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8"
+  >
     <div class="flex items-center gap-3">
-      <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-white">
+      <div
+        class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-white"
+      >
         <span class="material-symbols-outlined text-2xl">ac_unit</span>
       </div>
       <h1 class="text-xl font-black tracking-tight text-slate-900">
@@ -14,11 +20,26 @@
     </div>
 
     <nav class="hidden md:flex items-center gap-8">
-      <a href="#inicio" class="text-sm font-bold text-slate-700 hover:text-primary">Inicio</a>
-      <a href="#servicios" class="text-sm font-bold text-slate-700 hover:text-primary">Servicios</a>
-      <a href="#ubicacion" class="text-sm font-bold text-slate-700 hover:text-primary">Local</a>
-      <a href="#contacto" class="text-sm font-bold text-slate-700 hover:text-primary">Contacto</a>
-      <button class="rounded-full bg-accent px-5 py-2 text-sm font-bold text-white uppercase">Urgencias</button>
+      <a
+        href="#inicio"
+        class="text-sm font-bold text-slate-700 hover:text-primary">Inicio</a
+      >
+      <a
+        href="#servicios"
+        class="text-sm font-bold text-slate-700 hover:text-primary">Servicios</a
+      >
+      <a
+        href="#ubicacion"
+        class="text-sm font-bold text-slate-700 hover:text-primary">Local</a
+      >
+      <a
+        href="#contacto"
+        class="text-sm font-bold text-slate-700 hover:text-primary">Contacto</a
+      >
+      <button
+        class="rounded-full bg-accent px-5 py-2 text-sm font-bold text-white uppercase"
+        >Urgencias</button
+      >
     </nav>
 
     <button id="menu-btn" class="md:hidden p-2 text-slate-900">
@@ -26,11 +47,18 @@
     </button>
   </div>
 
-  <nav id="mobile-menu" class="hidden bg-white border-b border-slate-100 shadow-xl md:hidden">
+  <nav
+    id="mobile-menu"
+    class="hidden bg-white border-b border-slate-100 shadow-xl md:hidden"
+  >
     <div class="flex flex-col p-4 space-y-4 font-bold text-slate-800">
       <a href="#inicio" class="link-m py-2 border-b border-slate-50">Inicio</a>
-      <a href="#servicios" class="link-m py-2 border-b border-slate-50">Servicios</a>
-      <a href="#ubicacion" class="link-m py-2 border-b border-slate-50">Nuestro Local</a>
+      <a href="#servicios" class="link-m py-2 border-b border-slate-50"
+        >Servicios</a
+      >
+      <a href="#ubicacion" class="link-m py-2 border-b border-slate-50"
+        >Nuestro Local</a
+      >
       <a href="#contacto" class="link-m py-2">Contacto</a>
     </div>
   </nav>
@@ -45,7 +73,7 @@
     menu?.classList.toggle('hidden');
   });
 
-  links.forEach(l => {
+  links.forEach((l) => {
     l.addEventListener('click', () => menu?.classList.add('hidden'));
   });
 </script>

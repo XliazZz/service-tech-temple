@@ -1,0 +1,129 @@
+<div
+  class="sticky top-0 z-50 w-full bg-slate-50 dark:bg-[#1a2632] border-b border-[#e6edf4] dark:border-slate-700 shadow-sm"
+>
+  <div class="layout-container flex justify-center w-full">
+    <div class="px-4 md:px-10 flex flex-1 justify-center py-0">
+      <div class="layout-content-container flex flex-col max-w-[1200px] flex-1">
+        <header
+          class="flex items-center justify-between whitespace-nowrap py-3"
+        >
+          <div class="flex items-center gap-4 text-primary dark:text-white">
+            <div class="size-8 text-primary dark:text-blue-400">
+              <span class="material-symbols-outlined text-4xl">dentistry</span>
+            </div>
+            <h2
+              class="text-[#0c151d] dark:text-white text-2xl font-bold leading-tight tracking-[-0.015em]"
+            >
+              Dentec
+            </h2>
+          </div>
+
+          <div class="hidden lg:flex flex-1 justify-end gap-8 items-center">
+            <nav class="flex items-center gap-9">
+              <a
+                class="text-[#0c151d] dark:text-slate-200 text-sm font-medium hover:text-primary transition-colors"
+                href="#">Inicio</a
+              >
+              <a
+                class="text-[#0c151d] dark:text-slate-200 text-sm font-medium hover:text-primary transition-colors"
+                href="#">Servicios</a
+              >
+              <a
+                class="text-[#0c151d] dark:text-slate-200 text-sm font-medium hover:text-primary transition-colors"
+                href="#">Proceso</a
+              >
+              <a
+                class="text-[#0c151d] dark:text-slate-200 text-sm font-medium hover:text-primary transition-colors"
+                href="#">Emergencias</a
+              >
+              <a
+                class="text-[#0c151d] dark:text-slate-200 text-sm font-medium hover:text-primary transition-colors"
+                href="#contacto">Contacto</a
+              >
+            </nav>
+            <div class="flex gap-4 items-center">
+              <div
+                class="flex items-center gap-2 text-[#0c151d] dark:text-slate-200"
+              >
+                <span class="material-symbols-outlined text-primary">call</span>
+                <span class="text-sm font-bold">800-DENTEC-1</span>
+              </div>
+              <button
+                class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-accent hover:bg-emerald-700 transition-colors text-white text-sm font-bold shadow-md"
+              >
+                <span class="truncate">Soporte Urgente</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="lg:hidden flex items-center">
+            <button
+              id="mobile-menu-button"
+              class="p-2 text-slate-900 dark:text-white focus:outline-none"
+            >
+              <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+          </div>
+        </header>
+
+        <div
+          id="mobile-menu"
+          class="hidden lg:hidden flex-col bg-white dark:bg-[#1a2632] border-t border-slate-100 dark:border-slate-700 pb-4"
+        >
+          <nav class="flex flex-col">
+            <a
+              class="px-4 py-3 text-[#0c151d] dark:text-slate-200 text-base font-medium border-b border-slate-50 dark:border-slate-800"
+              href="#">Inicio</a
+            >
+            <a
+              class="px-4 py-3 text-[#0c151d] dark:text-slate-200 text-base font-medium border-b border-slate-50 dark:border-slate-800"
+              href="#">Servicios</a
+            >
+            <a
+              class="px-4 py-3 text-[#0c151d] dark:text-slate-200 text-base font-medium border-b border-slate-50 dark:border-slate-800"
+              href="#">Proceso</a
+            >
+            <a
+              class="px-4 py-3 text-[#0c151d] dark:text-slate-200 text-base font-medium border-b border-slate-50 dark:border-slate-800"
+              href="#">Emergencias</a
+            >
+            <a
+              class="px-4 py-3 text-[#0c151d] dark:text-slate-200 text-base font-medium border-b border-slate-50 dark:border-slate-800"
+              href="#contacto">Contacto</a
+            >
+          </nav>
+          <div class="p-4 flex flex-col gap-4">
+            <div
+              class="flex items-center gap-2 text-[#0c151d] dark:text-slate-200"
+            >
+              <span class="material-symbols-outlined text-primary">call</span>
+              <span class="text-sm font-bold">800-DENTEC-1</span>
+            </div>
+            <button
+              class="w-full bg-accent hover:bg-emerald-700 text-white font-bold py-3 rounded-lg shadow-md transition-colors"
+            >
+              Soporte Urgente
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const btn = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('mobile-menu');
+
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+    menu.classList.toggle('flex');
+  });
+
+  document.querySelectorAll('#mobile-menu a').forEach((link) => {
+    link.addEventListener('click', () => {
+      menu.classList.add('hidden');
+      menu.classList.remove('flex');
+    });
+  });
+</script>
