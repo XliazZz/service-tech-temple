@@ -1,0 +1,66 @@
+---
+import '../styles/refrigeracion.css';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html class="light" lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>{title}</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"
+    ></script>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24;
+      }
+      .wave-bottom {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+      }
+      .wave-bottom svg {
+        position: relative;
+        display: block;
+        width: calc(138% + 1.3px);
+        height: 60px;
+      }
+      @media (min-width: 768px) {
+        .wave-bottom svg {
+          height: 120px;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light text-slate-900 antialiased selection:bg-primary selection:text-white"
+  >
+    <slot />
+  </body>
+</html>
