@@ -1,0 +1,23 @@
+---
+import Header from '../components/apple/Header.astro';
+import HeroApple from '../sections/apple/HeroApple.astro';
+import FeaturesApple from '../sections/apple/FeaturesApple.astro';
+import ServicesApple from '../sections/apple/ServicesApple.astro';
+import LocationApple from '../sections/apple/LocationApple.astro';
+import FooterApple from '../sections/apple/FooterApple.astro';
+import LayoutApple from '../layout/LayoutApple.astro';
+---
+
+<LayoutApple title="Servicio Experto Apple">
+  <Header />
+  <main class="grow pt-16">
+    <HeroApple />
+
+    <FeaturesApple />
+
+    <ServicesApple />
+
+    <LocationApple />
+  </main>
+  <FooterApple />
+</LayoutApple>

@@ -1,0 +1,108 @@
+---
+const navLinks = [
+  { name: 'Servicios', href: '#servicios' },
+  { name: 'Proceso', href: '#proceso' },
+  { name: 'Ubicación', href: '#ubicacion' },
+];
+---
+
+<header>
+  <nav
+    class="fixed top-0 z-50 w-full border-b border-gray-200 bg-white/90 backdrop-blur-md dark:border-white/10 dark:bg-[var(--color-background-dark)]/90"
+  >
+    <div
+      class="mx-auto flex h-14 md:h-16 max-w-[1200px] items-center justify-between px-4 md:px-8"
+    >
+      <div class="flex items-center gap-2 md:gap-3">
+        <div
+          class="flex size-7 md:size-8 items-center justify-center rounded-lg bg-[var(--color-apple-text)] text-white dark:bg-white dark:text-black"
+        >
+          <span class="material-symbols-outlined !text-[18px] md:!text-[20px]"
+            >build_circle</span
+          >
+        </div>
+        <span
+          class="text-[15px] md:text-[17px] font-bold tracking-tight text-[var(--color-apple-text)] dark:text-white"
+        >
+          Servicio Apple
+        </span>
+      </div>
+
+      <div class="hidden items-center gap-8 md:flex">
+        {
+          navLinks.map((link) => (
+            <a
+              class="text-[13px] font-medium text-[var(--color-apple-text)] hover:text-[var(--color-primary)] transition-colors dark:text-white/80 dark:hover:text-white"
+              href={link.href}
+            >
+              {link.name}
+            </a>
+          ))
+        }
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button
+          class="hidden xs:flex h-8 md:h-9 items-center justify-center rounded-full bg-[var(--color-primary)] px-4 md:px-5 text-[11px] md:text-[13px] font-semibold text-white shadow-[var(--box-shadow-glow)] transition-all hover:opacity-90 active:scale-95"
+        >
+          Diagnóstico
+        </button>
+
+        <button
+          id="menu-btn"
+          class="flex size-9 items-center justify-center rounded-full bg-gray-100 text-[var(--color-apple-text)] md:hidden dark:bg-white/10 dark:text-white"
+          aria-expanded="false"
+        >
+          <span class="material-symbols-outlined" id="menu-icon">menu</span>
+        </button>
+      </div>
+    </div>
+
+    <div
+      id="mobile-nav"
+      class="hidden border-t border-gray-200 bg-white shadow-xl md:hidden dark:border-white/5 dark:bg-[var(--color-background-dark)]"
+    >
+      <div class="flex flex-col gap-1 p-4">
+        {
+          navLinks.map((link) => (
+            <a
+              class="rounded-lg px-4 py-3 text-base font-medium text-[var(--color-apple-text)] active:bg-gray-100 dark:text-white dark:active:bg-white/5"
+              href={link.href}
+            >
+              {link.name}
+            </a>
+          ))
+        }
+        <div class="mt-4 px-4 pb-2">
+          <button
+            class="w-full rounded-xl bg-[var(--color-primary)] py-3.5 font-bold text-white shadow-[var(--box-shadow-glow)]"
+          >
+            Solicitar Presupuesto
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  function initMenu() {
+    const btn = document.getElementById('menu-btn');
+    const nav = document.getElementById('mobile-nav');
+    const icon = document.getElementById('menu-icon');
+
+    if (btn && nav && icon) {
+      const toggle = () => {
+        const isHidden = nav.classList.toggle('hidden');
+        icon.textContent = isHidden ? 'menu' : 'close';
+      };
+
+      btn.removeEventListener('click', toggle);
+      btn.addEventListener('click', toggle);
+    }
+  }
+
+  initMenu();
+  document.addEventListener('astro:after-swap', initMenu);
+  document.addEventListener('astro:page-load', initMenu);
+</script>

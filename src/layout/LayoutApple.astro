@@ -1,38 +1,31 @@
 ---
-interface Prop {
+import '../styles/apple.css';
+
+interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
-
-import '../styles/techRepair.css';
 ---
 
-<!doctype html>
 <html class="light" lang="es">
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>{title}</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"
-    ></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
     <link
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
       rel="stylesheet"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-      rel="stylesheet"
-    />
-
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"
+    ></script>
+
     <style>
       body {
         font-family: 'Inter', sans-serif;
@@ -62,9 +55,11 @@ import '../styles/techRepair.css';
     </style>
   </head>
   <body
-    class="bg-background-light dark:bg-background-dark text-[#101418] dark:text-white transition-colors duration-300"
+    class="bg-background-light dark:bg-background-dark text-apple-text selection:bg-primary/20 selection:text-primary"
   >
-    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden"
+    >
       <slot />
     </div>
   </body>
